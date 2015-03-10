@@ -31,7 +31,7 @@ class Crawler:
             self.n4j.add_relation(page_node, 'LIKES', 
                                   liked_page_node)
             logging.info('Queueing ' + liked_page['fb_id'])
-            self.queue.append(liked_page['id'])
+            self.queue.append(liked_page['fb_id'])
 
     def recursive_crawling(self):
         for level in range(0, self.depth_level):
