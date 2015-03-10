@@ -9,4 +9,4 @@ Creates a graph of Facebook pages based on Like relation. Uses Python and Neo4J
 
 ### Usage
 
-See config.yaml
+See file [config.yaml](https://github.com/pcalm-tools/fb-page-graph/blob/master/config.yaml)
