@@ -18,6 +18,8 @@ class Crawler:
         self.depth_level = config['crawler']['depth_level']
         if config['crawler']['reset_graph']:
             self.n4j.delete_all()
+        else:
+            self.queue = self.n4j.get_leaf_pages()
 
     def get_and_store_page(self, page_id):
         page = self.fb.get_page(page_id)
@@ -38,5 +40,6 @@ class Crawler:
             current_queue = list(self.queue)
             self.queue[:] = []
             for page_id in current_queue:
-                if not self.n4j.page_exists(page_id):
-                    self.crawl_page_likes(page_id)
+                #TODO: IF page exists and have not children
+                #if not self.n4j.page_exists(page_id):
+                self.crawl_page_likes(page_id)

@@ -51,3 +51,12 @@ class N4JGraphController:
             if type(page[key]) is dict or type(page[key]) is list:
                 page.pop(key)
         return page
+
+    #FIXME: Query is not correct
+    def get_leaf_pages(self):
+        pages = []
+        query = "MATCH (a)-[r]->(b) return b.fb_id as fb_id";
+        for page in self.graph.cypher.execute(query):
+            pages.append(str(page.fb_id))
+        return pages
+

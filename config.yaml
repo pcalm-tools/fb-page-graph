@@ -5,7 +5,7 @@ fb-api:
     access_token: 1552595251636325|BFcM3XfK-aYF6BlCiv27ByPqM4M
 
 crawler:
-    reset_graph: False
+    reset_graph: False 
     depth_level: 3
     root_sites:
         - revoltadosonline
