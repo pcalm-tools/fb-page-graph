@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<table>
+
+{% for page in pages %}
+    <tr>
+    <td>
+    <div style='width:720px; border:solid 4px; padding:10px; background:lightgray'>
+    <img src="{{page.cover}}"/></span>
+    <h2><a href="{{page.link}}">{{page.name}}</a> ({{page.likes}} Likes)</h2>
+
+    {% if page.about %}
+        <span><i>{{page.about}}</i></span> <br/><br/>
+    {% endif %}
+
+    {% if page.description %}
+        <span>{{page.description}}</span> <br/>
+    {% endif %}
+    <br/>
+    <center>
+    </center>
+    </div>
+    </td>
+    <td>
+        <button style='background:green; color:white; font-size:1.5em'>
+            &nbsp;Serve &nbsp;
+        </button>
+        <br/><br/>
+        <button style='background:red;   color:white; font-size:1.5em'>
+            &nbsp;Não serve&nbsp;</button>
+    </td>
+    </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

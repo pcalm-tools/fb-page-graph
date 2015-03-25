@@ -11,10 +11,8 @@ class N4JGraphController:
     #TODO: Check if schema is not already created
     def initialize_schema(self):
         try:
-            self.graph.schema.create_uniqueness_constraint('Page', 
-                                                           'fb_id')
-            self.graph.schema.create_uniqueness_constraint('Page', 
-                                                           'username')
+            self.graph.schema.create_uniqueness_constraint('Page', 'fb_id')
+            self.graph.schema.create_uniqueness_constraint('Page', 'username')
         except Exception as e:
             logging.info('Skipping creation of unique constraint')
             
@@ -58,5 +56,18 @@ class N4JGraphController:
         query = "MATCH (a)-[r]->(b) return b.fb_id as fb_id";
         for page in self.graph.cypher.execute(query):
             pages.append(str(page.fb_id))
+        return pages
+
+    def get_pages(self, limit=10):
+        pages = []
+        query = "MATCH (a)-[r]->(b) return b LIMIT " + str(limit)
+        for page in self.graph.cypher.execute(query):
+#            pages.append(str(page.fb_id))
+            pages.append(page[0].properties)
+
+            #logging.info(pprint.pformat(page))
+            logging.info(type(page))
+            logging.info(pprint.pformat(page[0].properties))
+
         return pages
 
