@@ -2,6 +2,9 @@ from py2neo import Graph, Node, Relationship, watch, schema, error
 import pprint
 import logging
 
+logging.basicConfig(format='%(levelname)s:%(message)s', 
+                    level=logging.INFO)
+
 class N4JGraphController:
     graph = None
     def __init__(self, config):
@@ -50,24 +53,22 @@ class N4JGraphController:
                 page.pop(key)
         return page
 
-    #FIXME: Query is not correct
+    #TODO: Check if query is correct
     def get_leaf_pages(self):
-        pages = []
-        query = "MATCH (a)-[r]->(b) return b.fb_id as fb_id";
-        for page in self.graph.cypher.execute(query):
-            pages.append(str(page.fb_id))
-        return pages
+        fb_ids = []
+        #query = "MATCH (a)-[r]->(b) return b.fb_id as fb_id";
+        query = "start n=node(*) match n-[r*]->m where not(m-->())"\
+                " return distinct m.fb_id"
+        logging.info("using query= " + query)
+        for fb_id in self.graph.cypher.execute(query):
+            logging.info("Got fb_id = " + str(fb_id))
+            fb_ids.append(str(fb_id))        
+        return fb_ids
 
     def get_pages(self, limit=10):
         pages = []
         query = "MATCH (a)-[r]->(b) return b LIMIT " + str(limit)
         for page in self.graph.cypher.execute(query):
-#            pages.append(str(page.fb_id))
             pages.append(page[0].properties)
-
-            #logging.info(pprint.pformat(page))
-            logging.info(type(page))
-            logging.info(pprint.pformat(page[0].properties))
-
         return pages
 

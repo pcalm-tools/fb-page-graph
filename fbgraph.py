@@ -11,7 +11,7 @@ class FBGraphController:
         self.graph = facebook.GraphAPI(config['access_token'])
 
     def get_page(self, page_id):
-        logging.info('Getting page [' + page_id + ']')
+        logging.info('Getting page [' + str(page_id) + ']')
         return self.graph.get_object(page_id)
 
     def get_liked_pages(self, page_id):
