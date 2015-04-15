@@ -5,10 +5,9 @@ import logging
 class FBGraphController:
     """Access to common use Facebook Graph functionalities"""
 
-    graph = None
-
     def __init__(self, config):
-        self.graph = facebook.GraphAPI(config['access_token'])
+        with open (config['access_token'], "r") as f:
+            self.graph = facebook.GraphAPI(f.read())
 
     def get_page(self, page_id):
         logging.info('Getting page [' + str(page_id) + ']')

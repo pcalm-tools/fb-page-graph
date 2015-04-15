@@ -2,7 +2,7 @@ neo4j:
     url: http://localhost:7474/db/data/
     
 fb-api:
-    access_token: 1552595251636325|BFcM3XfK-aYF6BlCiv27ByPqM4M
+    access_token: fb-token
 
 crawler:
     reset_graph: True
