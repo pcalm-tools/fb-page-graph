@@ -2,6 +2,9 @@ import facebook
 import pprint
 import logging
 
+logger = logging.getLogger('fbgraph')
+logger.setLevel(logging.WARNING)
+
 class FBGraphController:
     """Access to common use Facebook Graph functionalities"""
 
@@ -10,8 +13,13 @@ class FBGraphController:
             self.graph = facebook.GraphAPI(f.read())
 
     def get_page(self, page_id):
-        logging.info('Getting page [' + str(page_id) + ']')
-        return self.graph.get_object(page_id)
+        try:
+            page = self.graph.get_object(str(page_id))
+            logger.info('Got page %s (%s)' % (str(page_id), page['name']))
+        except facebook.GraphAPIError as e:
+            logger.warn("** Error getting %s: %s" % (str(page_id), str(e)))
+            page = None
+        return page
 
     def get_liked_pages(self, page_id):
         liked_pages = []
