@@ -8,7 +8,12 @@ logging.basicConfig(format='%(levelname)s:%(message)s',
 class N4JGraphController:
     graph = None
     def __init__(self, config):
-        self.graph = Graph(config['url'])
+        # conn = "https://%s:%s@%s" % (config['user'], 
+        #                             config['password'],
+                                    # config['url'])
+
+        conn = "http://%s" % (config['url'])
+        self.graph = Graph(conn)
         self.initialize_schema()
 
     #TODO: Check if schema is not already created

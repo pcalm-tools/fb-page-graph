@@ -1,8 +1,10 @@
 neo4j:
-    url: http://localhost:7474/db/data/
+    url: localhost:7474/db/data/
+    user: neo4j
+    password: 12345
     
 fb-api:
-    access_token: fb-token
+    access_token: resources/fb-token
 
 crawler:
     reset_graph: True
@@ -126,4 +128,3 @@ crawler:
         - coletivoNigeria
         - selvasaopaulo
         - coletivosacode
-        

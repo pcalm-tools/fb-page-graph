@@ -5,6 +5,6 @@ import yaml
 
 logging.basicConfig(format='%(levelname)s:%(message)s', 
                     level=logging.INFO)
-config   = yaml.load(file('config.yaml', 'r'))
+config   = yaml.load(file('resources/config.yaml', 'r'))
 crawler = Crawler(config)
 crawler.run()
