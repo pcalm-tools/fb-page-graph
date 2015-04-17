@@ -9,4 +9,4 @@ import yaml
 logging.basicConfig()
 config   = yaml.load(file('resources/config.yaml', 'r'))
 crawler = Crawler(config)
-crawler.run()
+crawler.crawl()

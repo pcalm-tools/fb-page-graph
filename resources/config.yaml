@@ -6,16 +6,136 @@ neo4j:
 fb-api:
     access_token: resources/fb-token
 
+db-queue:
+    file: resources/db-queue.sqlite
+
 crawler:
     reset_graph: True
-    depth_level: 4
+    depth_level: 3
     root_sites:
-#        - impeachamentdilmarousseff
-#        - 139414012895968
-#        - 140140766087925
-#        - 132086310159726
-#        - lulanuncamais
-#        - 717203835017729
-#        - quadrilhadopt
-#        - VemPraRuaBrasil.org
-        - ColetivoMinervinodeOliveira
+        - impeachamentdilmarousseff
+        - 139414012895968
+        ### - 140140766087925
+        - 132086310159726
+        - lulanuncamais
+        - 717203835017729
+        - quadrilhadopt
+        - VemPraRuaBrasil.org
+        - revoltadosonline
+        - mudancaja
+        - MovimentoContraCorrupcao
+        - mblivre
+        - revoltadosonline
+        - mudancaja
+        - MovimentoContraCorrupcao
+        - mblivre
+        - JUNTOSECOMDEUS
+        - Impeachment
+        - ImpeachmentJa
+        - RevoltadosONLINE
+        - ForaDilma
+        - ForaPT
+        - MENSALAO
+        - EduardoCampos
+        - ForaLula
+        - OChefe
+        - Quadrilha
+        # - PTralhas
+        # - camisetasForaDilma
+        # - Prolart
+        # - VemPraRuaMeuPovo
+        # - BrasilVaiaDilma
+        # - Quem-tem-boca-VAIA-Dilma
+        # - maes.demaio
+        # - 505355392930680
+        # - ColetivoMinervinodeOliveira
+        # - coletivo.arrua
+        # - ColetivoDAR
+        # - coletivocarranca
+        # - coletivo.feministadandara
+        # - coletivodigital
+        # - plataformaprojetacao
+        # - 194036684131709
+        # - ColetivoDeMidiaIndependente
+        # - 543286105707475
+        # - FIPRJ
+        # - 622873857726299
+        # - agenciapublica
+        # - jornalanovademocracia
+        # - ComiteDeJornalismoPopular
+        # - comitepopularcopasp
+        # - ComitePopularCopaRJ
+        # - desmilitarizaDF
+        # - 219757011452914
+        # - atingidos.comitedacopa
+        # - passapalavra
+        # - passelivresp
+        # - rede.doisdeoutubro
+        # - redecontraviolenciarj
+        # - GappBrasil
+        # - entidadeurucum
+        # - 1460131457562593
+        # - 508048539322677
+        # - badernamidiatica
+        # - mtstbrasil
+        # - 267222963309434
+        # - casaforadoeixo
+        # - lutadotransportem.boimirim
+        # - DasLutas
+        # - MarchaDaMaconhaSaoPaulo
+        # - MarchaDasVadiasSP
+        # - yvyrupa
+        # - LutaTransporteExtremoSul
+        # - 1466593410221836
+        # - 219246894925349
+        # - 1440622829487387
+        # - direitoparaquem
+        # - MovimentoSemTerra
+        # - MovimentoOcupeEstelita
+        # - MovimentoNossaBH
+        # - 12PmPhotographic
+        # - centrogaspargarcia
+        # - okcufar
+        # - blogemancipacao
+        # - MidiaNegra
+        # - MidiaGAYSHA
+        # - midiaNINJA
+        # - forumrevista
+        # - CoalizaoEstudantil
+        # - canalpostv
+        # - ExisteAmorEmSp
+        # - NajupUfpe
+        # - 202008229838157
+        # - clinicaluizgama
+        # - clinicadh
+        # - parqueaugusta
+        # - 347772661906399
+        # - 166278113452829
+        # - 193285994067387
+        # - InstitutoProBono
+        # - idireitodedefesa
+        # - MAB.Brasil
+        # - 334373605225
+        # - acampasampa
+        # - pedranosapato
+        # - moinhoresiste
+        # - ativismo
+        # - QuilomboXis
+        # - FotografosAtivistas
+        # - NerdsAtivistas
+        # - revistavaidape
+        # - RevistaBerroCE
+        # - 240801296089491
+        # - FanfarraDoMal
+        # - estudiofluxo
+        # - 236458486394705
+        # - saju.fdusp
+        # - sajuufpe
+        # - AssembleiaPopularBH
+        # - tarifazerobh
+        # - JuventudeEmLuta
+        # - direitoshumanosnarua
+        # - pontejornalismo
+        # - coletivoNigeria
+        # - selvasaopaulo
+        # - coletivosacode

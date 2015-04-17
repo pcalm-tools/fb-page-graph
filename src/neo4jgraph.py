@@ -3,14 +3,14 @@ import pprint
 import logging
 
 logger = logging.getLogger('n4jgraph')
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.INFO)
 
 class N4JGraphController:
     graph = None
     def __init__(self, config):
         # conn = "https://%s:%s@%s" % (config['user'], 
-        #                             config['password'],
-                                    # config['url'])
+        #                              config['password'],
+        #                              config['url'])
 
         conn = "http://%s" % (config['url'])
         self.graph = Graph(conn)

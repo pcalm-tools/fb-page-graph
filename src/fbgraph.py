@@ -3,7 +3,7 @@ import pprint
 import logging
 
 logger = logging.getLogger('fbgraph')
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.INFO)
 
 class FBGraphController:
     """Access to common use Facebook Graph functionalities"""
@@ -23,10 +23,8 @@ class FBGraphController:
 
     def get_liked_pages(self, page_id):
         liked_pages = []
-        liked_page_ids = self.graph.get_connections(page_id, 'likes')
-
+        liked_page_ids = self.graph.get_connections(str(page_id), 'likes')
         for liked_page_id in liked_page_ids['data']:
             liked_pages.append(self.get_page(liked_page_id['id']))
-
         return liked_pages
         
